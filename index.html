@@ -14,9 +14,14 @@
         <!-- Nav bar -->
         <div class="navbar">
             <a class="active" href="#home">Home</a>
+            <!-- New section added -->
+            <a href="#slideshow">Slideshow</a>
             <a href="#about">About</a>
             <a href="#github">GitHub</a>
-            <a href="#contact">Contact</a>
+            <!-- Onclick and ondbclick functions added to open and
+            close the contact form -->
+            <a onclick="openForm()" ondblclick="closeForm()"
+            class="contact">Contact</a>
         </div>
 
         <br>
@@ -43,6 +48,60 @@
                 <br>Thank you for stopping by and enjoy!
                 </p>
             </strong>
+        </div>
+
+        <!-- Slideshow section added -->
+        <div id="slideshow">
+            <div id="slideshow_background">
+                <div id="slideshow_container">
+                    <!-- Slide 1 0f 6 -->
+                    <div class="mySlides fade">
+                        <img class="slideshow_images" src="./images/self_photo.jpg" alt="self photo">
+                        <div class="text">Let me assist you on your project!</div>
+                    </div>
+                    <!-- Slide 2 of 6 -->
+                    <div class="mySlides fade">
+                        <img class="slideshow_images" src="./images/html_css_js2.png" alt="html/css/js logos">
+                        <div class="text">I'm a full-stack software developer,<br> trained in:<br>
+                        HTML, CSS, JavaScript,</div>
+                    </div>
+                    <!-- Slide 3 of 6 -->
+                    <div class="mySlides fade">
+                        <img class="slideshow_images" src="./images/python_3.png" alt="python logo">
+                        <div class="text">the popular programming language Python,</div>
+                    </div>
+                    <!-- Slide 4 of 6 -->
+                    <div class="mySlides fade">
+                        <img class="slideshow_images" src="./images/csharp_2.jpg" alt="C# logo">
+                        <div class="text">C#, .NET Framework, ASP.NET, MVC, </div>
+                    </div>
+                    <!-- Slide 5 of 6 -->
+                    <div class="mySlides fade">
+                        <img class="slideshow_images" src="./images/sql.jpg" alt="SQL logo">
+                        <div class="text">back end development, databases and SQL.</div>
+                    </div>
+                    <!-- Slide 6 of 6 -->
+                    <div class="mySlides fade">
+                        <img class="slideshow_images" src="./images/laptop_3_edit.jpg" alt="choose a photo">
+                        <div class="text">
+                            <a class="white-text-contact" onclick="openForm()">Contact me today!</a>
+                        </div>
+                    </div>
+                    <!-- Previous and next buttons -->
+                    <a class="previous" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <br> <!-- Adding space b/w slideshow images and dots -->
+                    <!-- Slideshow dots -->
+                    <div style="text-align: center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                    <span class="dot" onclick="currentSlide(6)"></span>
+                </div>
+            </div>
         </div>
 
         <!-- About section -->
@@ -80,28 +139,31 @@
             </div>
             <!-- Right column -->
             <div class="column_2">
-                <a href="https://github.com/LizzyE22" target="_blank"><img src="./images/github_1.png" alt="GitHub Logo"></a>
+                <a href="https://github.com/LizzyE22" target="_blank"><img src="./images/github_2.png" alt="GitHub Logo"></a>
             </div>
         </div>
 
-        <!-- Contact section -->
-        <div row="row" id="contact">
-            <!-- Contact image, left column -->
-            <div class="column_2 column_tall">
-                <img src="./images/laptop_3.jpg" alt="laptop">
-            </div>
-            <!-- Contact form, right column-->
-            <div class="column_1 column_tall">
+            <!-- Contact form -->
+            <div id="contact">
+                <button onclick="openForm()" class="Pop_Up_Button">Contact</button>
+                <div class="form-popup" id="myForm">
+                <!-- Here we are using a free online service from https://formspree.io/ 
+                    to send our contact form to an email address of our choosing - 
+                    note: it will not run unless live on the internet, you have to push 
+                    it to your online website first -->
+                    <form action="https://formspree.io/info@learncodinganywhere.com" method="POST" class="form-container"> 
                 <h1>Contact</h1>
-                <!-- Where and how to send the form data- leaving blank -->
-                <form action="" method="POST">
-                    <label>Name:</label>
-                        <input type="text" placeholder="Please enter your name here">
-                    <label>Email:</label>
-                        <input type="text" placeholder="Please enter your email here">
-                    <label>Message:</label>
-                        <input type="text" placeholder="Please write your message here">    
-                        <input type="submit" value="SUBMIT">       
+                    <label for="name"><b>Name</b></label>
+                        <input type="text" placeholder="Type your name here" name="name" required>
+                    <label for="phone"><b>Phone</b></label>
+                        <input type="text" placeholder="Type your phone number here" name="phone">
+                    <label for="email"><b>Email</b></label>
+                        <input type="text" placeholder="Type your email address here" name="email" required>
+                    <label for="message"><b>Message</b></label>
+                        <input type="text" placeholder="Type your message here" name="message">    
+                        
+                        <button type="submit" class="btn">SUBMIT</button>
+                        <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
                 </form>
             </div>
         </div>
@@ -111,8 +173,8 @@
             <p>
                 <p class="center">&copy Proper Consulting Inc.,  <a href="https://www.learncodinganywhere.com/" target="_blank">The Tech Academy</a></p>
                 <br> 
-            </p>
         </footer>
+        <script src="portfolio.js.js"></script>
     </body>
 </html>
 
