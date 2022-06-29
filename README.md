@@ -1,4 +1,4 @@
-#Hello and welcome! 
+Hello and welcome! 
 
 Here is my portfolio profile that will tell you about my background and experience.
 
